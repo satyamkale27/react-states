@@ -8,6 +8,7 @@ const messages = [
 
 export default function App() {
   const [step, setStep] = useState(1);
+  const [isOpen, setIsOpen] = useState(true);
   console.log(step);
   function handelPrevious() {
     if (step > 1) setStep(step - 1);
@@ -18,29 +19,37 @@ export default function App() {
   }
 
   return (
-    <div className="steps">
-      <div className="numbers">
-        <div className={`${step >= 1 ? "active" : ""}`}>1</div>
-        <div className={`${step >= 2 ? "active" : ""}`}>2</div>
-        <div className={`${step >= 3 ? "active" : ""}`}>3</div>
-      </div>
-      <p className="message">
-        step {step}: {messages[step - 1]}
-      </p>
-      <div className="buttons">
-        <button
-          style={{ backgroundColor: "#7950f2", color: "#fff" }}
-          onClick={handelPrevious}
-        >
-          Previous
-        </button>
-        <button
-          style={{ backgroundColor: "#7950f2", color: "#fff" }}
-          onClick={handelNext}
-        >
-          Next
-        </button>
-      </div>
+    // (!isopen) ! this operator changes, if isopen if false it become true //
+    <div>
+      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+        &times;
+      </button>
+      {isOpen && (
+        <div className="steps">
+          <div className="numbers">
+            <div className={`${step >= 1 ? "active" : ""}`}>1</div>
+            <div className={`${step >= 2 ? "active" : ""}`}>2</div>
+            <div className={`${step >= 3 ? "active" : ""}`}>3</div>
+          </div>
+          <p className="message">
+            step {step}: {messages[step - 1]}
+          </p>
+          <div className="buttons">
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handelPrevious}
+            >
+              Previous
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handelNext}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
