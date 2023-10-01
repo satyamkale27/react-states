@@ -11,11 +11,11 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(true);
   console.log(step);
   function handelPrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((S) => S - 1);
   }
 
   function handelNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((sn) => sn + 1);
   }
 
   return (
