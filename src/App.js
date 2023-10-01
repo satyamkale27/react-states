@@ -21,7 +21,7 @@ export default function App() {
   return (
     // (!isopen) ! this operator changes, if isopen if false it become true //
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
