@@ -20,6 +20,7 @@ export default function App() {
 
   return (
     // (!isopen) ! this operator changes, if isopen if false it become true //
+    // &times displays X button symbol //
     <>
       <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
