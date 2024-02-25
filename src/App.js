@@ -41,12 +41,14 @@ export default function App() {
               textcolor="#fff"
               onclick={handelPrevious}
               text="Previous"
+              emoji="👈"
             />
             <Button
               bgcolor="#7950f2"
               textcolor="#fff"
               onclick={handelNext}
               text="Next"
+              emoji="👉"
             />
           </div>
         </div>
@@ -55,13 +57,13 @@ export default function App() {
   );
 }
 
-function Button({ textcolor, bgcolor, onclick, text }) {
+function Button({ textcolor, bgcolor, onclick, text, emoji }) {
   return (
     <button
       style={{ backgroundColor: bgcolor, color: textcolor }}
       onClick={onclick}
     >
-      {text}
+      <span>{emoji}</span> {text}
     </button>
   );
 }
