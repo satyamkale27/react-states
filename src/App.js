@@ -42,12 +42,12 @@ export default function App() {
               onclick={handelPrevious}
               text="Previous"
             />
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={handelNext}
-            >
-              Next
-            </button>
+            <Button
+              bgcolor="#7950f2"
+              textcolor="#fff"
+              onclick={handelNext}
+              text="Next"
+            />
           </div>
         </div>
       )}
