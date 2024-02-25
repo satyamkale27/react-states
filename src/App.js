@@ -61,7 +61,7 @@ function Button({ textcolor, bgcolor, onclick, children }) {
 }
 // children prop is made automaticly  </Button>
 //   <Button bgcolor="#7950f2" textcolor="#fff" onclick={handelNext}>
-//   Next <span>👉</span>
+//   Next <span>👉</span> // this is children prop between two open and close tag of component
 // </Button>
 // the elements betweem two button components has a clildren prop that is automaticly made//
 // recived children prop here function Button({ textcolor, bgcolor, onclick, children }) //
