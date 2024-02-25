@@ -36,20 +36,12 @@ export default function App() {
             step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <Button
-              bgcolor="#7950f2"
-              textcolor="#fff"
-              onclick={handelPrevious}
-              text="Previous"
-              emoji="👈"
-            />
-            <Button
-              bgcolor="#7950f2"
-              textcolor="#fff"
-              onclick={handelNext}
-              text="Next"
-              emoji="👉"
-            />
+            <Button bgcolor="#7950f2" textcolor="#fff" onclick={handelPrevious}>
+              <span>👈</span> Previous
+            </Button>
+            <Button bgcolor="#7950f2" textcolor="#fff" onclick={handelNext}>
+              Next <span>👉</span>
+            </Button>
           </div>
         </div>
       )}
@@ -57,13 +49,19 @@ export default function App() {
   );
 }
 
-function Button({ textcolor, bgcolor, onclick, text, emoji }) {
+function Button({ textcolor, bgcolor, onclick, children }) {
   return (
     <button
       style={{ backgroundColor: bgcolor, color: textcolor }}
       onClick={onclick}
     >
-      <span>{emoji}</span> {text}
+      {children}
     </button>
   );
 }
+// children prop is made automaticly  </Button>
+//   <Button bgcolor="#7950f2" textcolor="#fff" onclick={handelNext}>
+//   Next <span>👉</span>
+// </Button>
+// the elements betweem two button components has a clildren prop that is automaticly made//
+// recived children prop here function Button({ textcolor, bgcolor, onclick, children }) //
